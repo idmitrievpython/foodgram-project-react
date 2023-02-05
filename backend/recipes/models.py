@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.core import validators
 from django.db import models
-from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -165,7 +164,7 @@ class FavoriteRecipe(models.Model):
         return f'Пользователь {self.user} добавил {list_} в избранные.'
 
     @receiver(post_save, sender=User)
-    def create_favorite_recipe(sender, instance, created, **kwargs):
+    def create_favorite_recipe(sender, instance, created, **kwargs): # noqa: N805
         if created:
             FavoriteRecipe.objects.create(user=instance)
 
@@ -193,6 +192,6 @@ class ShoppingCart(models.Model):
 
     @receiver(post_save, sender=User)
     def create_shopping_cart(
-            sender, instance, created, **kwargs):
+            sender, instance, created, **kwargs): # noqa: N805
         if created:
             ShoppingCart.objects.create(user=instance)
