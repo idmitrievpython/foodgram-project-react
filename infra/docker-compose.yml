@@ -9,7 +9,7 @@ services:
       - ./.env
 
   backend:
-    image: julka3561/foodgram_backend:latest
+    image: ilyapython/foodgram_backend:latest
     restart: always
     volumes:
       - static_value:/app/staticfiles/
