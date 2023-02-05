@@ -164,7 +164,8 @@ class FavoriteRecipe(models.Model):
         return f'Пользователь {self.user} добавил {list_} в избранные.'
 
     @receiver(post_save, sender=User)
-    def create_favorite_recipe(sender, instance, created, **kwargs): # noqa: N805
+    def create_favorite_recipe(
+        sender, instance, created, **kwargs):  # noqa: N805
         if created:
             FavoriteRecipe.objects.create(user=instance)
 
@@ -192,6 +193,6 @@ class ShoppingCart(models.Model):
 
     @receiver(post_save, sender=User)
     def create_shopping_cart(
-            sender, instance, created, **kwargs): # noqa: N805
+            sender, instance, created, **kwargs):  # noqa: N805
         if created:
             ShoppingCart.objects.create(user=instance)
