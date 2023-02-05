@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+*build/
 develop-eggs/
 dist/
 downloads/
@@ -35,7 +35,7 @@ MANIFEST
 
 # Installer logs
 pip-log.txt
-pip-delete-this-directory.txt
+pip-delete-this-directory.txtf
 
 # Unit test / coverage reports
 htmlcov/
@@ -130,6 +130,9 @@ dmypy.json
 
 # .idea
 .idea
-media/
-static/
-.vscode/
+
+# .vscode
+.vscode
+
+# media
+backend/foodgram/media
